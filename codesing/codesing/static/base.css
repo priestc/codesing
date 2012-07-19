@@ -1,0 +1,65 @@
+body {background: #800000}
+
+h1 {
+    font-family: helvetica;
+    font-size: 34pt;
+    color: white;
+    text-shadow: 3px 3px 1px #435;
+}
+
+h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#content_wrapper {
+    width: 80em;
+    background: white;
+    border: 2px solid black;
+    margin: 0 auto 0 auto;
+    padding: 1em;
+}
+
+/* the title of the song */
+#song_container h2 {
+    margin: 3px;
+    font-size: xx-large;
+}
+
+/* the author name */
+#song_container h3 {
+    margin: 3px;
+    font-weight: normal;
+}
+
+/* the date name */
+#song_container h4 {
+    margin: 3px;
+    font-weight: normal;
+}
+
+#song_container h4 span{
+    font-size: larger;
+}
+
+#last_modified {
+    color: gray;
+    font-size: small;
+}
+
+#header {
+    height: 100px;
+    overflow: hidden;
+}
+
+#logobox {
+    float: left;
+}
+
+#userbox {
+    float: right;
+    text-align: right;
+    color: white;
+    padding: 3px;
+    width: 20em;
+}

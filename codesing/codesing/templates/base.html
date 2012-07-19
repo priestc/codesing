@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>CodeSing - {% block title%}{% endblock title %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" media="screen" />
+        
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/7.0/styles/default.min.css">
+        <script src="http://yandex.st/highlightjs/7.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+
+    <body>
+        <div id="header">
+            <div id="logobox">
+                <h1><a href="/">CodeSing</a></h1>
+            </div>
+            <div id="userbox">
+                {% if request.user.is_authenticated %}
+                Logged in as {{ request.user.username }}
+                <br><a href='{% url logout %}'>Log out</a>
+                {% else %}
+                <a href="{% url signup %}">Start singing today!</a>
+                {% endif %}
+            </div>
+        </div>
+        <div id="content_wrapper">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+
+</html>

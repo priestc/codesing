@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+Latest songs:
+<ul>
+    {% for song in latest_songs %}
+    <li>
+        <a class="song_link" href="{{ song.get_absolute_url }}">{{ song.title }}</a>
+         - {{ song.singer }} ({{song.date|date:"D d M Y" }})
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

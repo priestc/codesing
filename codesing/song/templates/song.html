@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load webdesign %}
+
+{% block title %}{{ song.title }}{% endblock %}
+
+{% block content %}
+<div id="song_container">
+    <h2>{{ song.title }}</h2>
+    <h3>by <a href="{{ song.singer.get_absolute_url }}">{{ song.singer.user.username }}</a></h3>
+    <h4><span class="year">{{ song.date|date:"Y" }}</span> {{song.date|date:"F d" }}</h4>
+    <hr>
+    <div id="song_body">
+        {{ song.rendered }}
+    </div>
+    <div id="last_modified">
+        {% if song.was_edited %}
+        last modified: {{ song.modified|date:"D d M Y" }}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
